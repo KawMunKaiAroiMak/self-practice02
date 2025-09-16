@@ -25,3 +25,31 @@ function getScore(x) {
 const score = getScore(1)
 console.log(score)
 // console.log(x, mid, final) //cannot access
+
+
+//pratice
+
+function idGenerator(){
+    let num = 0;
+    function plus(){
+    return ++num
+    }
+    return plus
+}
+
+const idGen = idGenerator()
+console.log(idGen())
+console.log(idGen())
+
+//pratice2
+
+function outerFunction(x){
+    function add(y){
+        return x+y
+    }
+    return add
+}
+const addFive = outerFunction(5)
+console.log(addFive(3))
+const addTen = outerFunction(10)
+console.log(addTen(2))
