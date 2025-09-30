@@ -1,0 +1,2 @@
+# เรียน DOM เอาไว้เชื่อมjavascript file กับ html file เช้่น getelementbyID,byclass เอาไว้เชื่อม ID,class ของ html แล้วนำไปดำเนิน
+# การต่างๆใน javascript
