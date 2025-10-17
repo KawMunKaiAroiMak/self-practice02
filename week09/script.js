@@ -98,3 +98,39 @@ const display = document.querySelector('p')
 message.addEventListener('input' , function(){
     display.textContent = message.value
 })
+
+
+
+//self-pratices
+// When the Create Account button is clicked, use JavaScript to 
+// prevent the page from refreshing and validate the form. All fields(username,email,password,confirm password)
+// must be filled. Show an error in red if any field is empty or if the passwords don't match. If all checks pass,
+// display a green success message confirming account creation.
+
+document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault(); 
+
+    let username = document.getElementById("username").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirm-password").value;
+    let message = document.querySelector("p");
+    let isValid = true;
+
+    if (!username || !email || !password || !confirmPassword) {
+        message.textContent = "All fields must be filled out, please try again!";
+        message.style.color = "red";
+        isValid = false;
+    } 
+
+    else if (password !== confirmPassword) {
+        message.textContent = "Password and confirm password do not match, please check again!";
+        message.style.color = "red";
+        isValid = false;
+    } 
+    
+    if (isValid) {
+        message.textContent = "Account created successfully!";
+        message.style.color = "green";
+    }
+});
